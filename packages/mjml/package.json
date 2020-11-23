@@ -1,7 +1,7 @@
 {
-  "name": "@mrgm/mjml-master",
+  "name": "mjml",
   "description": "MJML: the only framework that makes responsive-email easy",
-  "version": "4.7.2-mjmlhero-1",
+  "version": "4.7.2-mjmlhero",
   "main": "lib/index.js",
   "bin": {
     "mjml": "bin/mjml"
