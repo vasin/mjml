@@ -4,6 +4,7 @@
   ],
   "command": {
     "publish": {
+      "registry": "https://portal-npm-repo.devmail.ru",
       "exact": true
     }
   },
