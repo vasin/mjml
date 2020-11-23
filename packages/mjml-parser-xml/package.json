@@ -1,7 +1,7 @@
 {
   "name": "mjml-parser-xml",
   "description": "mjml-parser-xml",
-  "version": "4.7.2-mjmlhero",
+  "version": "4.7.1",
   "main": "lib/index.js",
   "files": [
     "lib"
@@ -23,14 +23,14 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.8.7",
-    "htmlparser2": "^4.1.0",
+    "htmlparser2": "^3.9.2",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "chai": "^4.1.1",
-    "mjml": "4.7.2-mjmlhero",
-    "mjml-core": "4.7.2-mjmlhero",
+    "mjml": "4.7.1",
+    "mjml-core": "4.7.1",
     "rimraf": "^3.0.2"
   }
 }

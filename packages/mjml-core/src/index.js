@@ -298,8 +298,10 @@ export default function mjml2html(mjml, options = {}) {
 
   content = processing(mjBody, bodyHelpers, applyAttributes)
 
-  content = minifyOutlookConditionnals(content)
-
+  if (minify && minify !== 'false') {
+    content = minifyOutlookConditionnals(content)
+  }
+  
   if (!isEmpty(globalDatas.htmlAttributes)) {
     const $ = cheerio.load(content, {
       xmlMode: true, // otherwise it may move contents that aren't in any tag
@@ -338,26 +340,17 @@ export default function mjml2html(mjml, options = {}) {
     })
   }
 
-  content = mergeOutlookConditionnals(content)
+  content =
+    beautify && beautify !== 'false'
+      ? htmlBeautify(content, {
+          indent_size: 2,
+          wrap_attributes_indent_size: 2,
+          max_preserve_newline: 0,
+          preserve_newlines: false,
+        })
+      : content
 
-  if (beautify) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      '"beautify" option is deprecated in mjml-core and only available in mjml cli.',
-    )
-    content = htmlBeautify(content, {
-      indent_size: 2,
-      wrap_attributes_indent_size: 2,
-      max_preserve_newline: 0,
-      preserve_newlines: false,
-    })
-  }
-
-  if (minify) {
-    // eslint-disable-next-line no-console
-    console.warn(
-      '"minify" option is deprecated in mjml-core and only available in mjml cli.',
-    )
+  if (minify && minify !== 'false') {
     content = htmlMinify(content, {
       collapseWhitespace: true,
       minifyCSS: false,
@@ -366,6 +359,8 @@ export default function mjml2html(mjml, options = {}) {
       ...minifyOptions,
     })
   }
+
+  content = mergeOutlookConditionnals(content)
 
   return {
     html: content,

@@ -1,4 +1,4 @@
-import { Parser } from 'htmlparser2'
+import htmlparser from 'htmlparser2'
 
 import { isObject, findLastIndex, find } from 'lodash'
 import { filter, map, flow } from 'lodash/fp'
@@ -153,7 +153,7 @@ export default function MJMLParser(xml, options = {}, includedIn = []) {
     cur = curBeforeInclude
   }
 
-  const parser = new Parser(
+  const parser = new htmlparser.Parser(
     {
       onopentag: (name, attrs) => {
         const isAnEndingTag = endingTags.indexOf(name) !== -1

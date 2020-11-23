@@ -4,11 +4,10 @@
   ],
   "command": {
     "publish": {
-      "registry": "https://portal-npm-repo.devmail.ru",
       "exact": true
     }
   },
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "4.7.2-mjmlhero-1"
+  "version": "4.7.1"
 }

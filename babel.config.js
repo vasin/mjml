@@ -1,5 +1,5 @@
 module.exports = {
-  presets: [['@babel/env', { targets: { node: '10' } }]],
+  presets: ['@babel/env'],
   plugins: [
     '@babel/proposal-class-properties',
     [
