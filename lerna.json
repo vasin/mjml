@@ -4,11 +4,11 @@
   ],
   "command": {
     "publish": {
-      "registry": "https://portal-npm-repo.devmail.ru",
+      "registry": "https://portal-npm-repo.devmail.ru/@mrgm/mjml-master",
       "exact": true
     }
   },
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "4.7.2-mjmlhero"
+  "version": "4.7.2-mjmlhero-1"
 }
